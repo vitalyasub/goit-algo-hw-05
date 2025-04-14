@@ -3,7 +3,7 @@ from typing import Callable
 
 def generator_numbers(text: str):
     # Пошук всіх дійсних чисел у тексті
-    for match in re.finditer(r"\b\d+\.\d+\b", text):
+    for match in re.finditer(r"\d+\.\d+", text):
         yield float(match.group())
 
 def sum_profit(text: str, func: Callable):
