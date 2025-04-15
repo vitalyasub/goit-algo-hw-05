@@ -18,16 +18,12 @@ def parse_input(user_input):
 
 @input_error
 def add_contact(args, contacts):
-    if len(args) != 2:
-        raise ValueError()
     name, phone = args
     contacts[name] = phone
     return "Contact added."
 
 @input_error
 def change_contact(args, contacts):
-    if len(args) != 2:
-        raise ValueError()
     name, new_phone = args
     if name in contacts:
         contacts[name] = new_phone
@@ -37,8 +33,6 @@ def change_contact(args, contacts):
  
 @input_error
 def show_phone(args, contacts):
-    if len(args) != 1:
-        raise ValueError()
     name = args[0]
     return contacts.get(name, "Contact not found.")
 
